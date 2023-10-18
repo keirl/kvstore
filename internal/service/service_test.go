@@ -6,6 +6,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestXxx(t *testing.T) {
-	assert.Nil(t, nil)
+func TestService_New(t *testing.T) {
+	store := NewFakeStore()
+	s := NewService(store)
+
+	assert.NotNil(t, s)
 }
