@@ -12,3 +12,17 @@ func TestService_New(t *testing.T) {
 
 	assert.NotNil(t, s)
 }
+
+func TestService_SetV(t *testing.T) {
+	store := NewFakeStore()
+	s := NewService(store)
+
+	cmd := SetVCmd{
+		Key:     "key",
+		Version: 1,
+		Value:   Value("value"),
+	}
+
+	err := s.SetV(cmd)
+	assert.Nil(t, err)
+}

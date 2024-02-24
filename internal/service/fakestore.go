@@ -18,3 +18,8 @@ func (s *FakeStore) Set(key string, value Value) error {
 	s.data[key] = value
 	return nil
 }
+
+func (s *FakeStore) Del(key string) error {
+	delete(s.data, key)
+	return nil
+}
